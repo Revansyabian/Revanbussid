@@ -12,10 +12,10 @@ from urllib.parse import quote
 import re
 import webbrowser
 
-WHITE  = '\x1b[1;97m'
-YELLOW  = '\x1b[38;5;226m'
-RED  = '\x1b[38;5;196m'
-BLACK  = '\x1b[38;5;8m'
+WHITE = '\x1b[1;97m'
+YELLOW = '\x1b[38;5;226m'
+RED = '\x1b[38;5;196m'
+BLACK = '\x1b[38;5;8m'
 GREEN = '\x1b[38;5;51m'
 green = '\x1b[38;5;46m'
 BLUE = '\x1b[38;5;14m'
@@ -251,7 +251,7 @@ def license_check():
     global USER_LICENSE_NAME, USER_LICENSE_EXPIRY_INFO, DEVICE_ID_INFO
     build_id_hash = dev_id()
     DEVICE_ID_INFO = build_id_hash
-    url = f'https://api.github.com/repos/Revansyabian/Top-up-bussid/contents/license/{build_id_hash}.json''
+    url = f'https://api.github.com/repos/Revansyabian/Top-up-bussid/contents/lisensi/{build_id_hash}.json'
     ketik(f"\n{PURPLE}[{YELLOW}◆{PURPLE}] {RED}Memeriksa lisensi Anda...{PURPLE}", d=0.01)
     time.sleep(2)
 
@@ -693,7 +693,7 @@ def HapusAkun():
         berhasil = False
 
     nama_display_final = nama_akun_sebelum_fetch if nama_akun_sebelum_fetch else "N/A"
-    if berhasil :
+    if berhasil:
         nama_display_final = f"{nama_akun_sebelum_fetch if nama_akun_sebelum_fetch else 'Akun'} (Telah Dihapus)"
 
     tampilkan_detail_transaksi(nama_display_final, None, None, None, berhasil, jenis_transaksi_override="Hapus Akun")
@@ -944,17 +944,17 @@ def main():
                 jum = input_jumlah()
             else:
                 jum = 1
-            if jum > 0 :
+            if jum > 0:
                 Gas(jum)
         elif pilihan == "16":
             Brp = input_nominal()
             jum = input_jumlah()
-            if jum > 0 :
+            if jum > 0:
                  Gas(jum)
         elif pilihan == "24":
             Brp = input_nominal(minus=True)
             jum = input_jumlah()
-            if jum > 0 :
+            if jum > 0:
                 Gas(jum)
         elif pilihan == "25":
             kuras_semua_uang()
